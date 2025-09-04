@@ -69,6 +69,7 @@
         <div class="controls">
           <button id="generate">Generate PDF</button>
           <button id="download" style="display:none">Download PDF</button>
+          <button id="clear" class="secondary">Clear Text</button>
         </div>
 
         <footer>
@@ -149,6 +150,12 @@
 
       doc.save('output.pdf');
     })
+    
+    T.clear = document.getElementById('clear');
+    T.clear.addEventListener('click', ()=>{
+      T.input.value = '';
+      updatePreview();
+    });
   </script>
 </body>
 </html>
